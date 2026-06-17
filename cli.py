@@ -1,11 +1,5 @@
 """
-cli.py
 Command-line interface for the Intelligent File Organizer.
-
-Usage examples:
-    python cli.py --source ~/Downloads
-    python cli.py --source ~/Downloads --output ~/Organized --dry-run
-    python cli.py --source ~/Desktop --no-duplicates --log-dir ./logs
 """
 
 import argparse
@@ -83,16 +77,16 @@ def main():
         if args.report:
             with open(args.report, "w") as f:
                 json.dump(report, f, indent=2)
-            print(f"\n📄 Report saved to: {args.report}")
+            print(f"\n Report saved to: {args.report}")
 
         # Exit code reflects errors
         sys.exit(1 if report["stats"]["errors"] else 0)
 
     except NotADirectoryError as e:
-        print(f"\n❌ {e}", file=sys.stderr)
+        print(f"\n {e}", file=sys.stderr)
         sys.exit(2)
     except KeyboardInterrupt:
-        print("\n⚠️  Interrupted by user.", file=sys.stderr)
+        print("\n  Interrupted by user.", file=sys.stderr)
         sys.exit(130)
 
 
