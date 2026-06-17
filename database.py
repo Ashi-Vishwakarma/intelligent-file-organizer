@@ -1,5 +1,4 @@
 """
-database.py
 SQLite-backed history and report storage for the Intelligent File Organizer.
 Each run is stored as a session; individual file moves are stored as records.
 """
@@ -17,7 +16,6 @@ DEFAULT_DB = os.path.join(
 
 
 class OrganizerDB:
-    """Thin wrapper around an SQLite database for organizing history."""
 
     CREATE_SESSIONS = """
     CREATE TABLE IF NOT EXISTS sessions (
