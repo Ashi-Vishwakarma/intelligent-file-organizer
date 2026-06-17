@@ -1,10 +1,3 @@
-"""
-gui.py
-Tkinter-based GUI for the Intelligent File Organizer.
-
-Run with:
-    python gui.py
-"""
 
 import os
 import sys
@@ -222,7 +215,7 @@ class App(tk.Tk):
 
             s = report["stats"]
             summary = (
-                f"\n✅ Done  |  Moved: {s['moved']}  "
+                f"\n Done  |  Moved: {s['moved']}  "
                 f"Duplicates: {s['duplicates_found']}  "
                 f"Errors: {s['errors']}"
             )
